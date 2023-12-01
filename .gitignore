@@ -21,6 +21,5 @@
 go.work
 
 
-
-#java 
+# Compiled java class file
 *.class
