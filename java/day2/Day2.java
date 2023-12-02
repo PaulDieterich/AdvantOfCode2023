@@ -22,7 +22,7 @@ public class Day2{
             List<String> lines = readLines(new File("C:\\Users\\pjd\\Documents\\AdvantOfCode2023\\java\\day2\\inputFile.txt"));
             int sum = 0;
             for(String l : lines){
-                boolean okay = true;
+                boolean gamePossible = true;
                 String id = l.substring(l.indexOf(" "),l.indexOf(":")).trim();
                 String[] bags = l.split(";");
                 bags[0] = bags[0].split(":")[1];
@@ -30,11 +30,11 @@ public class Day2{
                     for(String c: hand.split(",")){
                         String[] sub = c.trim().split(" ");
                         if(color.get(sub[1]) < Integer.parseInt(sub[0])){
-                            okay = false;
+                            gamePossible = false;
                         }
                     } 
                 }
-                if(okay){
+                if(gamePossible){
                     sum += Integer.parseInt(id);
                 }
             }
